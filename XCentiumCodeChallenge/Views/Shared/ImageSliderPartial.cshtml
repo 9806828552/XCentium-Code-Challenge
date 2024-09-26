@@ -1,0 +1,30 @@
+﻿@model IEnumerable<XCentiumCodeChallenge.Models.Image>
+
+
+<section class="h-100 gradient-custom">
+    <div class="container py-5">
+        <h2>Images used in the above URL</h2>
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <h3>Heading</h3>
+                                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                        <img src="@item.ImageUrl"
+                                         class="w-100" alt="temp" style="max-height: 150px;" />
+
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

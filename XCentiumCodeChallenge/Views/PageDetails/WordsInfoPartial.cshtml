@@ -1,0 +1,42 @@
+﻿@model IEnumerable<XCentiumCodeChallenge.Models.Word>
+
+
+<section class="h-100 gradient-custom">
+    <div class="container py-5">
+        <h2>Top 10 words used in the above URL</h2>
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-12">
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.value)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.occurence)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.value)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.occurence)
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
