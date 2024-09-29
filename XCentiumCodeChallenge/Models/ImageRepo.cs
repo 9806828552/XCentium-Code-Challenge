@@ -9,9 +9,7 @@ namespace XCentiumCodeChallenge.Models
             List<Image> images = new List<Image>();
 
             var document = new HtmlWeb().Load(pageUrl);
-            //var urls = document.DocumentNode.Descendants("img")
-            //                              .Select(e => e.GetAttributeValue("src", null))
-            //                            .Where(s => !String.IsNullOrEmpty(s));
+           
 
             foreach (string imgPath in document.DocumentNode.Descendants("img")
                                             .Select(e => e.GetAttributeValue("src", null))
