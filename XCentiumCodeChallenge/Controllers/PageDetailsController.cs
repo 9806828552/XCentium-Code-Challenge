@@ -22,12 +22,16 @@ namespace XCentiumCodeChallenge.Controllers
 
         // fetch all the images, Keep in partial view and return to index page
         [HttpPost]
-        public IActionResult GetImages(string pageUrl) 
+        public IActionResult GetImages(string pageUrl)
         {
+            if (string.IsNullOrEmpty(pageUrl))
+            {
+                return BadRequest();
+            }
             List<Image> images = new List<Image>();
             images = imageRepo.GetAllImages(pageUrl);
+            return PartialView("ImageSliderPartial", images);
 
-            return PartialView("ImageSliderPartial",images);
         }
 
         // fetch all the words, Keep in partial view and return to index page
@@ -39,6 +43,6 @@ namespace XCentiumCodeChallenge.Controllers
 
             return PartialView("WordsInfoPartial", words);
         }
-        
+
     }
 }
